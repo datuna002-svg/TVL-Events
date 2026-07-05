@@ -151,7 +151,7 @@ export const customroleCommand = {
       }
 
       const hexDisplay = `#${color.toString(16).padStart(6, '0').toUpperCase()}`;
-      const embed = new EmbedBuilder()
+      const embedCreate = new EmbedBuilder()
         .setTitle('✅ Custom Role Created')
         .setColor(color)
         .addFields(
@@ -162,7 +162,7 @@ export const customroleCommand = {
         .setFooter({ text: `Created by ${interaction.user.tag}` })
         .setTimestamp();
 
-      await interaction.editReply({ embeds: [embed] });
+      await interaction.editReply({ embeds: [embedCreate] });
 
       if (iconWarning) {
         await interaction.followUp({
@@ -227,8 +227,8 @@ export const customroleCommand = {
         );
       }
 
-      const embed = new EmbedBuilder()
-        .setTitle('🗑️ Custom Role Removed & Deleted')
+      const embedRemove = new EmbedBuilder()
+        .setTitle('🗑️ Custom Role Removed')
         .setColor(0xed4245)
         .addFields(
           { name: 'User', value: `<@${targetUser.id}>`, inline: true },
@@ -237,7 +237,7 @@ export const customroleCommand = {
         .setFooter({ text: `Removed by ${interaction.user.tag}` })
         .setTimestamp();
 
-      await interaction.editReply({ embeds: [embed] });
+      await interaction.editReply({ embeds: [embedRemove] });
       return;
     }
 

@@ -69,7 +69,7 @@ export const stanroleCommand = {
 
       await member.roles.add(roleOption.id, `Stan role added by ${interaction.user.tag}`);
 
-      const embed = new EmbedBuilder()
+      const embedAdd = new EmbedBuilder()
         .setTitle('⭐ Stan Role Added')
         .setColor(0xfee75c)
         .addFields(
@@ -79,7 +79,7 @@ export const stanroleCommand = {
         .setFooter({ text: `Added by ${interaction.user.tag}` })
         .setTimestamp();
 
-      await interaction.editReply({ embeds: [embed] });
+      await interaction.editReply({ embeds: [embedAdd] });
 
     // ── REMOVE ────────────────────────────────────────────────────────────────
     } else if (sub === 'remove') {
@@ -100,7 +100,7 @@ export const stanroleCommand = {
 
       await member.roles.remove(roleOption.id, `Stan role removed by ${interaction.user.tag}`);
 
-      const embed = new EmbedBuilder()
+      const embedRemove = new EmbedBuilder()
         .setTitle('🗑️ Stan Role Removed')
         .setColor(0xed4245)
         .addFields(
@@ -110,7 +110,7 @@ export const stanroleCommand = {
         .setFooter({ text: `Removed by ${interaction.user.tag}` })
         .setTimestamp();
 
-      await interaction.editReply({ embeds: [embed] });
+      await interaction.editReply({ embeds: [embedRemove] });
 
     // ── LIST ──────────────────────────────────────────────────────────────────
     } else if (sub === 'list') {

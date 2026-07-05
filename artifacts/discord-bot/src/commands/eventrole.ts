@@ -69,7 +69,7 @@ export const eventroleCommand = {
 
       await member.roles.add(roleOption.id, `Event winner role added by ${interaction.user.tag}`);
 
-      const embed = new EmbedBuilder()
+      const embedAdd = new EmbedBuilder()
         .setTitle('🏆 Event Winner Role Added')
         .setColor(0x57f287)
         .addFields(
@@ -79,7 +79,7 @@ export const eventroleCommand = {
         .setFooter({ text: `Added by ${interaction.user.tag}` })
         .setTimestamp();
 
-      await interaction.editReply({ embeds: [embed] });
+      await interaction.editReply({ embeds: [embedAdd] });
 
     // ── REMOVE ────────────────────────────────────────────────────────────────
     } else if (sub === 'remove') {
@@ -103,7 +103,7 @@ export const eventroleCommand = {
         `Event winner role removed by ${interaction.user.tag}`,
       );
 
-      const embed = new EmbedBuilder()
+      const embedRemove = new EmbedBuilder()
         .setTitle('🗑️ Event Winner Role Removed')
         .setColor(0xed4245)
         .addFields(
@@ -113,7 +113,7 @@ export const eventroleCommand = {
         .setFooter({ text: `Removed by ${interaction.user.tag}` })
         .setTimestamp();
 
-      await interaction.editReply({ embeds: [embed] });
+      await interaction.editReply({ embeds: [embedRemove] });
 
     // ── LIST ──────────────────────────────────────────────────────────────────
     } else if (sub === 'list') {
