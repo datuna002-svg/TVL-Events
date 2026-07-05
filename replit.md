@@ -1,15 +1,13 @@
-# [Project name]
+# TVB Events Discord Bot
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A Discord.js (TypeScript) bot for the TVB Events server that manages custom roles, event winner roles, Stan roles, and event/giveaway pings.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- **Discord Bot workflow** — runs the bot (`pnpm --filter @workspace/discord-bot run dev`)
+- `pnpm --filter @workspace/discord-bot run deploy` — re-register slash commands with Discord (run after adding/renaming commands)
+- `pnpm --filter @workspace/discord-bot run typecheck` — typecheck the bot
+- Required secrets: `DISCORD_BOT_TOKEN`, `DISCORD_APPLICATION_ID`, `DISCORD_CLIENT_ID`
 
 ## Stack
 
